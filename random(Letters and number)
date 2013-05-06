@@ -1,0 +1,56 @@
+
+
+int itRandomNumber(void)//make random numbers
+{
+    int numN;
+    numN=rand()%10+48;
+    return numN;
+}
+
+int itRandomBigLetter(void)//make random small latter
+{
+    int numB;
+    numB=rand()%26+65;
+    return numB;
+}
+
+int itRandomSmallLetter(void)//make random small latter
+{
+    int numL;
+    numL=rand()%26+97;
+    return numL;
+}
+
+int choiceRandom(void)//selection function
+{
+    int i=rand()%3;
+    switch(i)
+    {
+        case 0: return (itRandomNumber());
+        break;
+        case 1: return (itRandomBigLetter());
+        break;
+        case 2: return (itRandomSmallLetter());
+        break;
+        default: printf("Error when generation passwords");
+        return 0;
+    }
+}
+
+void keyGenStr(int Nkey,unsigned char AttM_1,unsigned char AttM_2)//Создание строки ключа длинной Nkey, и атрибутами AttM_1 & AttM_2
+{
+    int i;
+    int revers=Nkey*15;
+    int Key[Nkey];
+    //call function to calculate
+
+    for(i=0;i<Nkey;i++)
+        Key[i]=choiceRandom();
+
+    for(i=0;i<Nkey;i++)
+        printf("Key[%d]=%c\n",i,Key[i]);
+
+    printf("\n");
+    for(i=0;i<Nkey;i++)
+        printf("Key[%d]=%c\n",i,Key[i]);
+}
