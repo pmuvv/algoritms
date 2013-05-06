@@ -1,5 +1,4 @@
 
-
 int itRandomNumber(void)//make random numbers
 {
     int numN;
@@ -46,10 +45,6 @@ void keyGenStr(int Nkey,unsigned char AttM_1,unsigned char AttM_2)//Создан
 
     for(i=0;i<Nkey;i++)
         Key[i]=choiceRandom();
-
-    for(i=0;i<Nkey;i++)
-        printf("Key[%d]=%c\n",i,Key[i]);
-
     printf("\n");
     for(i=0;i<Nkey;i++)
         printf("Key[%d]=%c\n",i,Key[i]);
